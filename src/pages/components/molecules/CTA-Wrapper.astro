@@ -1,0 +1,26 @@
+---
+// Import all components
+import CTABlock from "../atoms/CTA-Block.astro"
+---
+
+<div>
+    <!-- Optional user inputs -->
+    <CTABlock title="Title" />
+    <CTABlock title="Title" />
+</div>
+
+<style>
+    div {
+        gap: 24px;
+        display: flex;
+        margin-top: 80px;
+        width: min(100%, 1312px); /* Width & Max-width */
+
+        /* Mobile: */
+        @media (max-width: 768px) {
+            flex-direction: column;
+            margin-top: 32px;
+            gap: 16px;
+        }
+    }
+</style>

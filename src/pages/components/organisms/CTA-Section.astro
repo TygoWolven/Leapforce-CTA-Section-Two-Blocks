@@ -1,0 +1,101 @@
+---
+// Import all components:
+import CTAWrapper from "../molecules/CTA-Wrapper.astro"
+import Arrow from "../atoms/icons/Arrow.astro"
+---
+
+<section id="cta-section">
+    <header>
+        <span class="label">Label</span>
+
+        <!-- According to the design system, this should be an H2 due to the styling. However, this is not very semantic in this scenario. -->
+        <h1>Mandatory title about the <span>call-to-action</span> here</h1>
+    </header>
+    
+    <p>Optional body copy goes here.</p>
+
+    <a href="#" class="optional-button">
+        <!-- currentColor takes the color of its parent-element. -->
+        Optional button <Arrow color="currentColor" />
+    </a>
+    
+    <CTAWrapper />
+</section>
+
+<style>
+    #cta-section {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        
+        header {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            /* Only apply styles when the header contains a label in the DOM. */
+            &:has(span.label) {
+                gap: 6px;
+
+                span.label {
+                    font-size: 15px;
+                    letter-spacing: 0.02em;
+                    color: var(--green-gray);
+                }
+            }
+
+            h1 {
+                max-width: 18ch;
+                text-align: center;
+                color: var(--black);
+                text-indent: -9px; /* Removes some whitespace so it perfectly aligns with the design. */
+            }
+
+            /* Mobile: */
+            @media (max-width: 768px) {
+                &:has(span.label) {
+                    gap: 8px;
+
+                    span.label {
+                        font-size: 14px;
+                    }
+                }
+
+                h1 {
+                    max-width: 14ch;
+                    text-indent: -12px;
+                }
+            }
+        }
+
+        /* Paragraphs directly inside the cta-section, prevents selecting paragraphs inside components within the section. */
+        > p {
+            opacity: 80%;
+            margin: 24px 0;
+            color: var(--charcoal);
+
+            /* Mobile: */
+            @media (max-width: 768px) {
+                margin: 16px 0;
+            }
+        }
+
+        .optional-button {  
+            display: flex;
+            color: var(--orange-red); 
+
+            svg {
+                margin-left: 4px;
+            }
+
+            &:hover {
+                color: var(--orange-red-hover);
+            }
+
+            &:focus {
+                color: var(--orange-red-focussed);
+            }
+        }
+    }
+</style>

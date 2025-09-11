@@ -1,71 +1,128 @@
-/* TT Commons Pro */
+/* TT Commons Pro: */
 @font-face {
     font-family: "TT Commons Pro Normal";
     src: url("/fonts/TT Commons Pro/TT Commons Pro Normal.otf");
-}
-@font-face {
-    font-family: "TT Commons Pro Medium";
-    src: url("/fonts/TT Commons Pro/TT Commons Pro Medium.otf");
 }
 @font-face {
     font-family: "TT Commons Pro DemiBold";
     src: url("/fonts/TT Commons Pro/TT Commons Pro DemiBold.otf");
 }
 
-/* GT Alpina */
+/* GT Alpina: */
 @font-face {
-    font-family: "GT Alpina";
+    font-family: "GT Alpina Light";
     src: url("/fonts/GT Alpina/GTAlpina-Light.otf");
 }
 
-/* Custom Properties */
+/* Custom Properties: */
 :root {
-    /* Neutral Colors */
+    /* Neutral Colors: */
     --white: rgb(255, 255, 255);
     --soft-white: rgb(250, 250, 250);
     --tinted-white: rgb(255, 252, 250);
 
     --black: rgb(33, 33, 33);
     --charcoal: rgb(30, 37, 38); 
-    
-    /* Main Colors */
-    --dark-orange: rgb(191, 86, 77);
     --green-gray: rgb(57, 73, 77);
+    
+    /* Main Colors: */
+    --orange-red: rgb(191, 86, 91);
+    --orange-red-hover: rgb(166, 67, 58);
+    --orange-red-focussed: rgb(89, 32, 27);
 
-    /* Border Radius */
+    /* Border Radius: */
     --radius: 4px;
 }
 
-/* General Styling */
+/* General Styling: */
 * {
     margin: 0;
     padding: 0;
     font-size: 19px;
-    list-style: none;
+    transition: 0.2s ease;
     text-decoration: none;
     box-sizing: border-box;
     font-family: "TT Commons Pro Normal";
     
-    /* Hide the scrollbar */
+    /* Hide the scrollbar. */
     &::-webkit-scrollbar {
         display: none;
     }
 }
 
 body {
-    margin: 0 20px;
+    margin: 48px 20px;
     background: var(--tinted-white);
+}
 
-    /* Mobile */
-    @media (max-width: 768px) {
-        margin: 20px;
+/* Headings: */
+h1,
+h2 {
+    font-family: "TT Commons Pro DemiBold";
+
+    /* Highlight */
+    &:has(span) {
+        span {
+            font-weight: 500;
+            font-family: "GT Alpina Light";
+        }
     }
 }
 
-/* Headings */
 h1 {
     font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.03em;
+
+    /* Highlight */
+    &:has(span) {
+        span {
+            font-size: 42px;
+        }
+    }
 }
+
 h2 {
     font-size: 28px;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+
+    /* Highlight */
+    &:has(span) {
+        span {
+            font-size: 29px;
+        }
+    }
+}
+
+/* Mobile: */
+@media (max-width: 768px) {
+    * {
+        font-size: 17px;
+    }
+
+    h1 {
+        font-size: 36px;
+        line-height: 40px;
+        letter-spacing: -0.02em;
+
+        /* Highlight */
+        &:has(span) {
+            span {
+                font-size: 38px;
+            }
+        }
+    }
+
+    h2 {
+        font-size: 23px;
+        line-height: 24px;
+
+        /* Highlight */
+        &:has(span) {
+            span {
+                font-size: 24px;
+            }
+        }
+    }
 }
