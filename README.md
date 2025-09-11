@@ -1,1 +1,1 @@
-<img width="1580" height="2179" alt="Leapforce-Custom-Fields" src="https://github.com/user-attachments/assets/f40f0a37-1ce2-4be7-a62e-5c49de0af950" />
+<img width="1452" height="2051" alt="Leapforce-Custom-Fields" src="https://github.com/user-attachments/assets/8b7cf055-9f20-4e8f-99fd-7f1ecadd0157" />
